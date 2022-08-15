@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abalone</title>
+    <link href="{{url_for('static',filename='css/style.css')}}" type='text/css' rel='stylesheet'>
+</head>
+<body>
+    <h1>Abalone</h1>
+    <div>
+        <form action="{{url_for('predict')}}" method='post'>
+            <label for='Sex'>Sex</label><br>
+            <input type='radio' value='1' name='Sex'>Male
+            <input type='radio' value='0' name='Sex'>Female<br>
+            <label for='length'>Length</label>
+            <input type='number' name='length' placeholder='enter the length'><br>
+            <label for='Diameter'>Diameter</label>
+            <input type='number' name='diameter' placeholder='enter the diameter'><br>
+            <label for='Height'>Height</label>
+            <input type='number' name='height' placeholder='enter the height'><br>
+            <label for='Whole weight'>Whole weight</label>
+            <input type='number' name='whole weight' placeholder='enter the whole weight'><br>
+            <label for='Shucked weight'>Shucked weight</label>
+            <input type='number' name='shucked weight' placeholder='enter the shucked weight'><br>
+            <label for='Viscera weight'>Viscera weight</label>
+            <input type='number' name='viscera weight' placeholder='enter the viscera weight'><br>
+            <label for='Shell weight'>Shell weight</label>
+            <input type='number' name='shell weight' placeholder='enter the shell weight'><br>
+            <input type='submit' class='btn btn-primary btn-block' value='predict'>
+        </form>
+    </div>
+    {{prediction}}
+</body>
+</html>
